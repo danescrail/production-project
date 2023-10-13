@@ -7,6 +7,9 @@
         "jsx": "react-jsx",
         "allowJs": true,
         "baseUrl": ".",
+        "paths": {
+         "*": ["./src/*"] // Все импорты и т.п, теперь идут из папки src
+        },
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true
