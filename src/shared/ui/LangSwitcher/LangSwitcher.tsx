@@ -4,7 +4,7 @@ import { Button } from "../Button/Button";
 import { useTranslation } from "react-i18next";
 
 interface LangSwitcherProps {
-    className?: string;
+    className: string;
 }
 
 export const LangSwitcher = ({ className }: LangSwitcherProps) => {

@@ -4,11 +4,11 @@ import { BuildOptions } from "./types/config";
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
-export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins (options: BuildOptions): webpack.WebpackPluginInstance[] {
     const { paths, isDev } = options;
     return [
         new HtmlWebpackPlugin({
-            template: paths.html,
+            template: paths.html
         }),
         new webpack.ProgressPlugin(),
         new MiniCssExtractPlugin({
@@ -16,9 +16,9 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
             chunkFilename: 'css/[name].[contenthash:8].css' // Разбивка асихнронных файлов и синхронных
         }),
         new webpack.DefinePlugin({
-            __IS_DEV__: JSON.stringify(isDev),
+            __IS_DEV__: JSON.stringify(isDev)
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new ReactRefreshWebpackPlugin (),
+        new ReactRefreshWebpackPlugin()
     ];
 }

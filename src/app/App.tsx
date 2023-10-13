@@ -6,7 +6,6 @@ import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense } from 'react';
 
-
 export const App = () => {
     const { theme } = useTheme(); // Используем хук
 
