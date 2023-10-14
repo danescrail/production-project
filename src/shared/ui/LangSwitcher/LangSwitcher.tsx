@@ -3,7 +3,7 @@ import { Button } from "../Button/Button";
 import { useTranslation } from "react-i18next";
 
 interface LangSwitcherProps {
-    className: string;
+    className?: string;
 }
 
 export const LangSwitcher = ({ className }: LangSwitcherProps) => {
@@ -14,7 +14,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
 
     return (
         <Button
-            className={classNames('', {}, [className])}
+            className={classNames('', {}, [className!])}
             onClick={toggleLanguage}
         >
             {t('Язык')}

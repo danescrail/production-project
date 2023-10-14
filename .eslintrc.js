@@ -1,23 +1,27 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest": true,
     },
     
     "extends": [
         "plugin:react/recommended",
-        "standard-with-typescript"
+        "standard-with-typescript",
+        'eslint:recommended', 
+        'plugin:@typescript-eslint/recommended'
     ],
     
     "overrides": [
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
-        "sourceType": "module"
+        "sourceType": "module",
+        
     },
     "plugins": [
         "react",
-        "i18next"
+        "i18next",
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
@@ -37,6 +41,8 @@ module.exports = {
         "eol-last": "off",
         "@typescript-eslint/strict-boolean-expressions": "off",
         "@typescript-eslint/naming-convention": "off",
-        "i18next/no-literal-string": ['error', {markupOnly: true}]
+        "i18next/no-literal-string": ['error', {markupOnly: true}],
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-explicit-any": "off"
     },
 }
