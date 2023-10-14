@@ -16,7 +16,8 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "i18next"
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
@@ -36,5 +37,6 @@ module.exports = {
         "eol-last": "off",
         "@typescript-eslint/strict-boolean-expressions": "off",
         "@typescript-eslint/naming-convention": "off",
+        "i18next/no-literal-string": ['error', {markupOnly: true}]
     },
 }
