@@ -1,7 +1,14 @@
 {
-    "presets": ["@babel/preset-env", "@babel/preset-typescript"],
-    "plugins": [
-        "i18next-extract",
-        // […] your other plugins […]
-      ]
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    [
+      "@babel/preset-react",
+      { "runtime": "automatic" }
+    ]
+  ],
+  "plugins": [
+    "i18next-extract"
+    // […] your other plugins […]
+  ]
 }

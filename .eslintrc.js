@@ -43,6 +43,6 @@ module.exports = {
         "@typescript-eslint/naming-convention": "off",
         "i18next/no-literal-string": ['error', {markupOnly: true}],
         "@typescript-eslint/no-non-null-assertion": "off",
-        "@typescript-eslint/no-explicit-any": "off"
+        "@typescript-eslint/no-explicit-any": "off",
     },
 }
