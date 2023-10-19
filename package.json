@@ -85,7 +85,6 @@
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-http-backend": "^2.2.2",
     "install": "^0.13.0",
-    "loki": "^0.32.0",
     "npm": "^10.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
