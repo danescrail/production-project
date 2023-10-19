@@ -1,9 +1,9 @@
 name: linting, testing, building
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
   pull_request:
-    branches: ["main"]
+    branches: ["master"]
 
 jobs:
   pipeline:
@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v1
         with:
           node-version: '20.x'
       - run: npm install
@@ -21,15 +21,3 @@ jobs:
       - run: lint:ts
       - run: lint:scss
       - run: test:unit
-
-      # "start": "webpack serve --env port=3000",
-      # "build:prod": "webpack --env mode=production",
-      # "build:dev": "webpack --env mode=development",
-      # "lint:ts": "eslint \"**/*.{ts,tsx}\"",
-      # "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
-      # "lint:scss": "npx stylelint \"**/*.scss\"",
-      # "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
-      # "test:unit": "jest --config ./config/jest/jest.config.ts --env=jsdom",
-      # "test:ui": "npx loki test",
-      # "storybook": "storybook dev -p 6006 -c ./config/storybook",
-      # "build-storybook": "storybook build -c ./config/storybook"
