@@ -24,5 +24,6 @@
         "./config/jest/setupTests.ts",
         "src/**/*",
         "config/**/*",
+        "./webpack.config.ts"
     ],
 }
