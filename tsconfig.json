@@ -8,7 +8,9 @@
         "allowJs": true,
         "baseUrl": ".",
         "paths": {
-         "*": ["./src/*"] // Все импорты и т.п, теперь идут из папки src
+            "*": [
+                "./src/*"
+            ] // Все импорты и т.п, теперь идут из папки src
         },
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
