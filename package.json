@@ -83,13 +83,13 @@
     "i18next": "^23.5.1",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-http-backend": "^2.2.2",
-    "loki": "^0.32.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.2.2",
     "react-router-dom": "^6.16.0",
     "regenerator-runtime": "^0.14.0",
-    "svg-react-loader": "^0.4.6"
+    "svg-react-loader": "^0.4.6",
+    "uuid": "^9.0.1"
   },
   "jest": {
     "modulePaths": [

@@ -16,8 +16,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '20.x'
-      - run: npm install --force
-      # - run: npm run build:prod
+      - run: npm install
+      - run: npm run build:prod
       - run: lint:ts
       - run: lint:scss
       - run: test:unit
