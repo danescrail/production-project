@@ -18,6 +18,6 @@ jobs:
           node-version: '20.x'
       - run: npm install
       - run: npm run build:prod
-      - run: lint:ts
-      - run: lint:scss
-      - run: test:unit
+      - run: npm run lint:ts
+      - run: npm run lint:scss
+      - run: npm run test:unit
