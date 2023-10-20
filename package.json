@@ -14,7 +14,7 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts --env=jsdom",
     "test:ui": "npx loki test",
     "test:ui:ok": "loki approve",
-    "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:ci": "concurrently --kill-others --raw --success first \"npm run storybook\" \"npm run test:ui\" \"deelay\"",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
   },
@@ -82,6 +82,8 @@
   "dependencies": {
     "@babel/preset-react": "^7.22.15",
     "@types/jest": "^29.5.5",
+    "concurrently": "^8.2.2",
+    "deelay": "^2.0.0",
     "i18next": "^23.5.1",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-http-backend": "^2.2.2",
