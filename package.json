@@ -15,6 +15,9 @@
     "test:ui": "npx loki test",
     "test:ui:ok": "loki approve",
     "test:ui:ci": "concurrently --kill-others --raw --success first \"npm run storybook\" \"npm run test:ui\" \"deelay\"",
+    "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
+    "test:ui:json": "node scripts/generate-visual-json-report.js",
+    "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
   },
@@ -94,6 +97,7 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^13.2.2",
     "react-router-dom": "^6.16.0",
+    "reg-cli": "^0.17.7",
     "regenerator-runtime": "^0.14.0",
     "svg-react-loader": "^0.4.6",
     "uuid": "^9.0.1"
