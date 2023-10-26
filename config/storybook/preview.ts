@@ -13,7 +13,11 @@ const preview = {
             }
         }
     },
-    decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT), MemoryRouterDecorator]
+    decorators: [
+        StyleDecorator,
+        ThemeDecorator(Theme.LIGHT),
+        MemoryRouterDecorator
+    ]
 };
 
 export default preview;
