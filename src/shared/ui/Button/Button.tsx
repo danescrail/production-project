@@ -38,7 +38,7 @@ export const Button: FC<ButtonProps> = (props) => {
         [cls.square]: square,
         [cls[size]]: size
     }
-    console.log(square);
+
     return (
         <button className={classNames(cls.Button, mods, [className!, cls[theme]])} {...otherProps}>
             {children}
