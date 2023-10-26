@@ -1,3 +1,4 @@
+import { MemoryRouterDecorator } from "shared/config/storybook/MemoryRouterDecorator/MemoryRouterDecorator";
 import { StyleDecorator } from "../../src/shared/config/storybook/StyleDecorator/StyleDecorator";
 import { ThemeDecorator } from "../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
@@ -12,7 +13,7 @@ const preview = {
             }
         }
     },
-    decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT)]
+    decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT), MemoryRouterDecorator]
 };
 
 export default preview;
