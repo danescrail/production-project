@@ -23,6 +23,7 @@ module.exports = {
     "plugins": [
         "react",
         "i18next",
+        "react-hooks"
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
@@ -45,6 +46,8 @@ module.exports = {
         "i18next/no-literal-string": ['error', {markupOnly: true}],
         "@typescript-eslint/no-non-null-assertion": "off",
         "@typescript-eslint/no-explicit-any": "off",
+        "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+        "react-hooks/exhaustive-deps": "error" // Checks effect dependencies
     },
     "ignorePatterns": ["scripts"],
 }
