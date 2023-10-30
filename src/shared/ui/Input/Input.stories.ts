@@ -1,38 +1,29 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Modal } from './Modal';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
+import { Input } from './Input'
+
 const meta = {
-    title: 'shared/Modal',
-    component: Modal,
+    title: 'shared/Input', // Указываем где находится папка с кнопкой
+    component: Input, // Какой компонент проверяем
     parameters: {},
-    tags: ['autodocs'],
     argTypes: {}
-} satisfies Meta<typeof Modal>;
+} satisfies Meta<typeof Input>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const ModalOpen: Story = {
-    args: {
-        children: 'fdssFSfsDSFSDsFSDFSFSDFSDFSD',
-        isOpen: true
-    }
-}
-
 export const Light: Story = {
     args: {
-        children: 'test',
-        isOpen: true
+        placeholder: 'Введите текст'
     },
     decorators: [ThemeDecorator(Theme.LIGHT)]
 }
 
 export const Dark: Story = {
     args: {
-        children: 'test',
-        isOpen: true
+        placeholder: 'Введите текст'
     },
     decorators: [ThemeDecorator(Theme.DARK)]
 }

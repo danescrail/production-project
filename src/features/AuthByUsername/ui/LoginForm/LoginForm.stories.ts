@@ -1,38 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Modal } from './Modal';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
+import { LoginForm } from './LoginForm';
+
 const meta = {
-    title: 'shared/Modal',
-    component: Modal,
+    title: 'features/LoginForm', // Указываем где находится папка с кнопкой
+    component: LoginForm, // Какой компонент проверяем
     parameters: {},
-    tags: ['autodocs'],
     argTypes: {}
-} satisfies Meta<typeof Modal>;
+} satisfies Meta<typeof LoginForm>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const ModalOpen: Story = {
-    args: {
-        children: 'fdssFSfsDSFSDsFSDFSFSDFSDFSD',
-        isOpen: true
-    }
-}
-
 export const Light: Story = {
-    args: {
-        children: 'test',
-        isOpen: true
-    },
+    args: {},
     decorators: [ThemeDecorator(Theme.LIGHT)]
 }
 
 export const Dark: Story = {
-    args: {
-        children: 'test',
-        isOpen: true
-    },
+    args: {},
     decorators: [ThemeDecorator(Theme.DARK)]
 }
