@@ -47,7 +47,8 @@ module.exports = {
         "@typescript-eslint/no-non-null-assertion": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-        "react-hooks/exhaustive-deps": "error" // Checks effect dependencies
+        "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
+        "react/display-name": "off"
     },
     "ignorePatterns": ["scripts"],
 }

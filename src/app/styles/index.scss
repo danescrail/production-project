@@ -4,11 +4,14 @@
 @import './themes/normal';
 
 body {
-    font-size: var(--font-m);
     color: var(--primary-color);
+    font-size: var(--font-m);
 }
 
-.app {
+.app,
+.app_modal,
+.app_dark_theme,
+.app_light_theme {
     min-height: 100vh;
     background: var(--bg-color);
 }
@@ -20,4 +23,5 @@ body {
 .page-wrapper {
     flex-grow: 1;
     padding: 20px;
+    background: var(--secondary-color);
 }

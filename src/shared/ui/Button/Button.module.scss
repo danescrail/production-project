@@ -32,6 +32,19 @@
     color: var(--inverted-primary-color);
 }
 
+.outline {
+    outline: 1px;
+    background: none;
+    border: solid 2px var(--primary-color);
+}
+
+.outlineInverted {
+    outline: 1px;
+    background: none;
+    border: 2px solid var(--inverted-primary-color);
+    color: var(--inverted-primary-color);
+}
+
 .square {
     padding: 0;
 }

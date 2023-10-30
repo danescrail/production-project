@@ -5,5 +5,9 @@
   "Обновить страницу": "Update page",
   "Произошла не предвиденная ошибка": "An unexpected error occurred",
   "Короткий язык": "En",
-  "Войти": "Authorization"
+  "Войти": "Authorization",
+  "Введите имя пользователя": "Enter username",
+  "Введите пароль": "Enter password",
+  "Главная": "Main",
+  "О сайте": "About"
 }

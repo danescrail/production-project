@@ -151,3 +151,19 @@ export const ClearLightSizeXL: Story = {
     },
     decorators: [ThemeDecorator(Theme.LIGHT)]
 }
+
+export const Outline: Story = {
+    args: {
+        children: 'Outline',
+        theme: ThemeButton.OUTLINE
+    },
+    decorators: [ThemeDecorator(Theme.LIGHT)]
+}
+
+export const OutlineInverted: Story = {
+    args: {
+        children: 'OutlineInverted',
+        theme: ThemeButton.OUTLINE_INVERTED
+    },
+    decorators: [ThemeDecorator(Theme.LIGHT)]
+}
