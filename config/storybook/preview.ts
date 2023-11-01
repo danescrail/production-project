@@ -1,3 +1,4 @@
+import { ReduxToolkitDecorator } from "../../src/shared/config/storybook/ReduxToolkitDecorator/ReduxToolkitDecorator";
 import { MemoryRouterDecorator } from "../../src/shared/config/storybook/MemoryRouterDecorator/MemoryRouterDecorator";
 import { StyleDecorator } from "../../src/shared/config/storybook/StyleDecorator/StyleDecorator";
 import { ThemeDecorator } from "../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator";
@@ -16,7 +17,8 @@ const preview = {
     decorators: [
         StyleDecorator,
         ThemeDecorator(Theme.LIGHT),
-        MemoryRouterDecorator
+        MemoryRouterDecorator,
+        ReduxToolkitDecorator
     ]
 };
 

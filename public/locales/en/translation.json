@@ -9,5 +9,9 @@
   "Введите имя пользователя": "Enter username",
   "Введите пароль": "Enter password",
   "Главная": "Main",
-  "О сайте": "About"
+  "О сайте": "About",
+  "Форма авторизации": "Form Authorization",
+  "Неверный логин или пароль": "Uncorrect username or password",
+  "Вы ввели неверный логин или пароль": "Uncorrect username or password",
+  "Выйти": "Exit"
 }

@@ -1,7 +1,7 @@
 /* eslint-disable no-return-assign */
 import path from "path";
 import { BuildPaths } from "../build/types/config";
-import webpack from "webpack";
+import webpack, { DefinePlugin } from "webpack";
 import { buildCssLoader } from "../build/loaders/buildCssLoader";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { buildSvgLoader } from "../build/loaders/buildSvgLoader";
@@ -32,5 +32,9 @@ export default ({ config }: { config: webpack.Configuration }) => {
     config.resolve?.extensions?.push('.ts', '.tsx');
 
     config.plugins?.push(new MiniCssExtractPlugin());
+    config.plugins?.push(new DefinePlugin({
+        __IS_DEV__: true
+    }));
+
     return config;
 };

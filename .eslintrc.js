@@ -50,5 +50,5 @@ module.exports = {
         "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
         "react/display-name": "off"
     },
-    "ignorePatterns": ["scripts"],
+    "ignorePatterns": ["scripts", "json-server"],
 }

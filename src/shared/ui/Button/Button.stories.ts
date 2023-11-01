@@ -167,3 +167,11 @@ export const OutlineInverted: Story = {
     },
     decorators: [ThemeDecorator(Theme.LIGHT)]
 }
+
+export const Disabled: Story = {
+    args: {
+        children: 'Disabled',
+        disabled: true
+    },
+    decorators: [ThemeDecorator(Theme.LIGHT)]
+}
