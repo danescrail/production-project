@@ -16,13 +16,14 @@ import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicM
 
 export interface LoginFormProps {
     className?: string;
+    onSuccess?: () => void;
 }
 
 const initialReducers: ReducerList = {
     loginForm: loginReducer
 }
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const { t } = useTranslation('translation');
     const dispatch = useAppDispatch();
 
@@ -40,10 +41,14 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
     }, [dispatch]);
 
     const onLoginClick = useCallback(() => {
-        if (username && password) {
-            dispatch(loginByUsername({ username, password }));
+        if (username && password && onSuccess) {
+            dispatch(loginByUsername({ username, password })).then((response: Record<string, any>) => {
+                if (response.meta.requestStatus === 'fulfilled') {
+                    onSuccess(); // Закрытие формы только в случае успешной авторизации
+                }
+            });
         }
-    }, [dispatch, username, password]);
+    }, [dispatch, username, password, onSuccess]);
 
     return (
         <DynamicModuleLoader
