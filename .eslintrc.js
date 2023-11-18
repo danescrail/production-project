@@ -4,7 +4,7 @@ module.exports = {
         "es2021": true,
         "jest": true,
     },
-    
+
     "extends": [
         "plugin:react/recommended",
         "standard-with-typescript",
@@ -12,13 +12,13 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
         "plugin:storybook/recommended"
     ],
-    
+
     "overrides": [
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module",
-        
+
     },
     "plugins": [
         "react",
@@ -43,12 +43,16 @@ module.exports = {
         "eol-last": "off",
         "@typescript-eslint/strict-boolean-expressions": "off",
         "@typescript-eslint/naming-convention": "off",
-        "i18next/no-literal-string": ['error', {markupOnly: true}],
+        "i18next/no-literal-string": ['error', { markupOnly: true }],
         "@typescript-eslint/no-non-null-assertion": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
         "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
-        "react/display-name": "off"
+        "react/display-name": "off",
+        "@typescript-eslint/no-invalid-void-type": "off",
+        "@typescript-eslint/no-unnecessary-type-assertion": "off",
+        "@typescript-eslint/prefer-ts-expect-error": "off",
+        "@typescript-eslint/prefer-includes": "off"
     },
     "ignorePatterns": ["scripts", "json-server"],
 }

@@ -1,0 +1,13 @@
+.Wrapper {
+    display: flex;
+}
+
+.label {
+    margin-right: 5px;
+}
+
+.select {
+    background: none;
+    outline: none;
+    color: var(--primary-color)
+}

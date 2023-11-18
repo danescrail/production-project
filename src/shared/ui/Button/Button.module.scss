@@ -45,6 +45,13 @@
     color: var(--inverted-primary-color);
 }
 
+.outlineRed {
+    border: 2px solid var(--red-light);
+    background: none;
+    color: var(--red-light);
+    outline: 1px;
+}
+
 .square {
     padding: 0;
 }

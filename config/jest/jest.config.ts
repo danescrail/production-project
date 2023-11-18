@@ -19,7 +19,8 @@ const config: Config = {
     // Automatically clear mock calls, instances, contexts and results before every test
     testEnvironment: 'jsdom',
     globals: {
-        __IS_DEV__: true
+        __IS_DEV__: true,
+        __API__: ''
     },
     clearMocks: true,
     coveragePathIgnorePatterns: [

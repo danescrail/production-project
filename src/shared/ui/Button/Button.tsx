@@ -9,7 +9,8 @@ export enum ThemeButton {
     BACKGROUND = 'background',
     BACKGROUND_INVERTED = 'backgroundInverted',
     OUTLINE = 'outline',
-    OUTLINE_INVERTED = 'outlineInverted'
+    OUTLINE_INVERTED = 'outlineInverted',
+    OUTLINE_RED = 'outlineRed'
 }
 
 export enum SizeButton {

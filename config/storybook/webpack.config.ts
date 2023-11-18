@@ -16,7 +16,6 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
     if (config.module?.rules) {
         config.module.rules = config.module?.rules?.map((rule: webpack.RuleSetRule | "...") => {
-            // eslint-disable-next-line @typescript-eslint/prefer-includes
             if (rule !== "..." && /svg/.test(rule.test as string)) {
                 return { ...rule, exclude: /\.svg$/i };
             }
@@ -33,7 +32,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
     config.plugins?.push(new MiniCssExtractPlugin());
     config.plugins?.push(new DefinePlugin({
-        __IS_DEV__: true
+        __IS_DEV__: true,
+        __API__: ''
     }));
 
     return config;

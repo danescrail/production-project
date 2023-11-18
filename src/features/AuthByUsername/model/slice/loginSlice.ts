@@ -2,10 +2,6 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { LoginSchema } from '../types/loginSchema'
 import { loginByUsername } from '../services/loginByUsername/loginByUsername'
 
-export interface CounterState {
-    value: number
-}
-
 const initialState: LoginSchema = {
     isLoading: false,
     username: '',
