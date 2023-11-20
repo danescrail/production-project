@@ -6,6 +6,8 @@ import { Input } from "shared/ui/Input/Input";
 import { Profile } from "../../model/types/profile";
 import { Loader } from "shared/ui/Loader/Loader";
 import { Avatar } from "shared/ui/Avatar/Avatar";
+import { Currency, CurrencySelect } from "entities/Currency";
+import { Country, CountrySelect } from "entities/Country";
 
 interface ProfileCardProps {
     className?: string;
@@ -19,6 +21,8 @@ interface ProfileCardProps {
     onChangeAge?: (value?: string) => void;
     onChangeAvatar?: (value?: string) => void;
     onChangeUsername?: (value?: string) => void;
+    onChangeCurrency?: (currency: Currency) => void;
+    onChangeCountry?: (country: Country) => void;
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
@@ -33,7 +37,9 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChangeCity,
         onChangeAge,
         onChangeAvatar,
-        onChangeUsername
+        onChangeUsername,
+        onChangeCurrency,
+        onChangeCountry
     } = props
     const { t } = useTranslation('profile');
 
@@ -104,6 +110,18 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     placeholder={t('Введите ссылку на аватар')}
                     className={cls.input}
                     onChange={onChangeAvatar}
+                    readonly={readonly}
+                />
+                <CurrencySelect
+                    className={cls.input}
+                    value={data?.currency}
+                    onChange={onChangeCurrency}
+                    readonly={readonly}
+                />
+                <CountrySelect
+                    className={cls.input}
+                    value={data?.country}
+                    onChange={onChangeCountry}
                     readonly={readonly}
                 />
             </div>

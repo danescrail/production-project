@@ -13,5 +13,7 @@
   "Форма авторизации": "Form Authorization",
   "Неверный логин или пароль": "Uncorrect username or password",
   "Вы ввели неверный логин или пароль": "Uncorrect username or password",
-  "Выйти": "Exit"
+  "Выйти": "Exit",
+  "Укажите валюту": "Select arian",
+  "Укажите страну": "Select country"
 }
