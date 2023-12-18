@@ -3,7 +3,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 import { Avatar } from './Avatar';
-import AvatarImg from './3b2758ad5492a76b578f7ee072e4e894.jpg'
+import AvatarImg from 'shared/assets/tests/3b2758ad5492a76b578f7ee072e4e894.jpg'
 
 const meta = {
     title: 'shared/Avatar', // Указываем где находится папка с кнопкой

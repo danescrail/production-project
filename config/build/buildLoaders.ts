@@ -17,16 +17,15 @@ export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
                     ['@babel/preset-env', { targets: "defaults" }]
                 ],
                 plugins: [
-                    ["i18next-extract",
+                    [
+                        "i18next-extract",
                         {
-                            locales: [
-                                "ru",
-                                "en"
-                            ],
+                            locales: ["ru", "en"],
                             keyAsDefaultValue: true
                         }
-                    ]
-                ]
+                    ],
+                    isDev && require.resolve('react-refresh/babel')
+                ].filter(Boolean)
             }
         }
     };

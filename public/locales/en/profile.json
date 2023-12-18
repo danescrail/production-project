@@ -11,5 +11,10 @@
   "Город": "city",
   "Ваш логин": "username",
   "Введите ссылку на аватар": "write link on avatar",
-  "Укажите валюту": "Select arian"
+  "Укажите валюту": "Select arian",
+  "Некорректный возраст": "Incorrect age",
+  "Ошибка сервера": "Server Error",
+  "Некорректное имя и фамилия пользователя": "Incorrect first and lastname",
+  "Некорректный выбор страны": "Incorrect select country",
+  "Не указаны данные": "No data in input"
 }

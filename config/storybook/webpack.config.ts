@@ -32,8 +32,9 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
     config.plugins?.push(new MiniCssExtractPlugin());
     config.plugins?.push(new DefinePlugin({
-        __IS_DEV__: true,
-        __API__: false
+        __IS_DEV__: JSON.stringify(true),
+        __API__: JSON.stringify(''),
+        __PROJECT__: JSON.stringify('storybook')
     }));
 
     return config;

@@ -2,6 +2,12 @@
     cursor: pointer;
     color: var(--primary-color);
     padding: 6px 15px;
+
+    &:hover {
+        opacity: 0.7;
+        fill-opacity: 0.7;
+        stroke-opacity: 0.7;
+    }
 }
 
 .clear,
@@ -75,15 +81,15 @@
 }
 
 .size_m {
-    font: var(--font-m)
+    font: var(--font-m);
 }
 
 .size_l {
-    font: var(--font-l)
+    font: var(--font-l);
 }
 
 .size_xl {
-    font: var(--font-xl)
+    font: var(--font-xl);
 }
 
 .disabled {

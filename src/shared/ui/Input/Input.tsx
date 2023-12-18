@@ -1,6 +1,7 @@
 import { Mods, classNames } from "shared/lib/classNames/classNames";
 import cls from './Input.module.scss';
 import { InputHTMLAttributes, memo, useEffect, useRef, useState } from "react";
+import { Text } from "../Text/Text";
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
@@ -62,7 +63,7 @@ export const Input = memo((props: InputProps) => {
         <div className={classNames(cls.InputWrapper, mods, [className!])}>
             {placeholder
                 ? <div>
-                    {`${placeholder}:`}
+                    <Text text={`${placeholder}:`}/>
                 </div>
                 : ''
             }

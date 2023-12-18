@@ -2,10 +2,12 @@
 @import './variables/global';
 @import './themes/dark';
 @import './themes/normal';
+@import './themes/blue';
 
 body {
     color: var(--primary-color);
     font-size: var(--font-m);
+    overflow-y: hidden;
 }
 
 .app,
@@ -22,6 +24,10 @@ body {
 
 .page-wrapper {
     flex-grow: 1;
-    padding: 20px;
+    padding: 20px 20px 20px 45px;
     background: var(--secondary-color);
+    height: calc(100vh - var(--navbar-height));
+    overflow-y: auto;
+    width: 100%;
+    margin-bottom: 20px;
 }

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Text, TextTheme } from './Text';
+import { Text, TextSize, TextTheme } from './Text';
 
 const meta = {
     title: 'shared/Text', // Указываем где находится папка с кнопкой
@@ -40,6 +40,24 @@ export const Error: Story = {
         title: 'Error Title',
         text: 'Error Text',
         theme: TextTheme.ERROR
+    },
+    decorators: [ThemeDecorator(Theme.LIGHT)]
+}
+
+export const SizeM: Story = {
+    args: {
+        title: 'Title',
+        text: 'Text... Text... Text...',
+        size: TextSize.M
+    },
+    decorators: [ThemeDecorator(Theme.LIGHT)]
+}
+
+export const SizeL: Story = {
+    args: {
+        title: 'Title',
+        text: 'Text... Text... Text...',
+        size: TextSize.L
     },
     decorators: [ThemeDecorator(Theme.LIGHT)]
 }

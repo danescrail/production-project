@@ -8,6 +8,7 @@ import { getProfileError } from "./model/selectors/getProfileError/getProfileErr
 import { getProfileIsLoading } from "./model/selectors/getProfileIsLoading/getProfileIsLoading";
 import { getProfileReadonly } from "./model/selectors/getProfileReadonly/getProfileReadonly";
 import { getProfileForm } from "./model/selectors/getProfileForm/getProfileForm";
+import { getProfileValidateErrors } from "./model/selectors/getProfileValidateError/getProfileValidateError";
 
 export {
     type Profile,
@@ -25,5 +26,6 @@ export {
     getProfileError,
     getProfileIsLoading,
     getProfileReadonly,
-    getProfileForm
+    getProfileForm,
+    getProfileValidateErrors
 }

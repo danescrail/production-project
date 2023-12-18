@@ -6,7 +6,7 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 export function buildPlugins (options: BuildOptions): webpack.WebpackPluginInstance[] {
-    const { paths, isDev, apiUrl } = options;
+    const { paths, isDev, apiUrl, project } = options;
     const plugins = [
         new HtmlWebpackPlugin({
             template: paths.html
@@ -18,7 +18,8 @@ export function buildPlugins (options: BuildOptions): webpack.WebpackPluginInsta
         }),
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
-            __API__: JSON.stringify(apiUrl)
+            __API__: JSON.stringify(apiUrl),
+            __PROJECT__: JSON.stringify(project)
         }),
         new webpack.HotModuleReplacementPlugin(),
         new ReactRefreshWebpackPlugin()

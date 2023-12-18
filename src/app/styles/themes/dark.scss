@@ -1,8 +1,15 @@
 .app_dark_theme {
     --bg-color: rgb(71 71 71);
-    --inverted-bg-color: #FFF;
+    --inverted-bg-color: #fff;
     --primary-color: rgb(230 196 82);
     --secondary-color: #fbfbfb;
-    --inverted-primary-color: #222;;
-    --inverted-secondary-color: #f5f5f5;
+    --inverted-primary-color: #222;
+    --inverted-secondary-color: #a3a1a1;
+
+    // skeleton
+    --skeleton-color: #222;
+    --skeleton-shadow: #5a5555;
+
+    // code
+    --code-bg: rgb(107, 107, 107);
 }
