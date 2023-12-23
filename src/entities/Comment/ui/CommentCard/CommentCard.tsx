@@ -1,7 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from './CommentCard.module.scss';
 import { memo } from "react";
-import { useTranslation } from "react-i18next";
 import { Comment } from "../../model/types/comment";
 import { Avatar } from "shared/ui/Avatar/Avatar";
 import { Text } from "shared/ui/Text/Text";
@@ -11,13 +10,11 @@ import { RoutePath } from "shared/config/routeConfig/routeConfig";
 
 interface CommentCardProps {
     className?: string;
-    comment: Comment;
+    comment?: Comment;
     isLoading?: boolean;
 }
 
 export const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) => {
-    const { t } = useTranslation('comment');
-
     if (isLoading) {
         return (
             <div className={classNames(cls.CommentCard, {}, [className!])}>
@@ -28,6 +25,9 @@ export const CommentCard = memo(({ className, comment, isLoading }: CommentCardP
                 <Skeleton width={'100%'} height={50} className={cls.text} />
             </div>
         )
+    }
+    if (!comment) {
+        return null;
     }
     return (
         <div className={classNames(cls.CommentCard, {}, [className!])}>

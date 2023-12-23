@@ -3,7 +3,7 @@ import cls from './ArticleDetailsPage.module.scss';
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 import { ArticleDetails } from "entities/Article";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { CommentList } from "entities/Comment";
 import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
@@ -15,6 +15,8 @@ import { fetchCommentsArticleById } from "../model/services/fetchCommentsByArtic
 import { useAppDispatch } from "app/providers/StoreProvider/config/hooks";
 import { AddCommentForm } from "features/AddNewComment";
 import { addCommentForArticle } from "../model/services/addCommentForArticle/addCommentForArticle";
+import { Button, ThemeButton } from "shared/ui/Button/Button";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -32,6 +34,11 @@ const ArticleDetailsPage = ({ className, isLoading }: ArticleDetailsPageProps) =
     const dispatch = useAppDispatch();
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+    const navigate = useNavigate();
+
+    const onBackToList = useCallback(() => {
+        navigate(RoutePath.articles);
+    }, [navigate]);
 
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
@@ -54,6 +61,9 @@ const ArticleDetailsPage = ({ className, isLoading }: ArticleDetailsPageProps) =
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <div className={classNames(cls.ArticleDetailsPage, {}, [className!])}>
+                <Button theme={ThemeButton.OUTLINE_INVERTED} onClick={onBackToList}>
+                    {t('Назад к списку')}
+                </Button>
                 <ArticleDetails id={id} />
                 <Text title={t('Комментарии')} theme={TextTheme.PRIMARY}/>
                 <AddCommentForm onSendComment={onSendComment}/>
