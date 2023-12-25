@@ -27,7 +27,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
     }, [collapsed, sidebarItemsList]);
 
     return (
-        <div data-testid='sidebar'
+        <menu data-testid='sidebar'
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className!])}>
             <Button
                 onClick={onToggle}
@@ -48,6 +48,6 @@ export const Sidebar = ({ className }: SidebarProps) => {
                     className={cls.lang}
                     short={collapsed} />
             </div>
-        </div>
+        </menu>
     );
 }

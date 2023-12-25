@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Input } from "shared/ui/Input/Input";
+import { Page } from "shared/ui/Page/Page";
 
 const MainPage = () => {
     const { t } = useTranslation('main');
@@ -12,10 +13,10 @@ const MainPage = () => {
     }
 
     return (
-        <div>
+        <Page>
             <Input onChange={onChange} value={value} placeholder="Введите текст" />
             {t('Главная страница')}
-        </div>
+        </Page>
     )
 }
 
