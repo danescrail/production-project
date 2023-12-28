@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { MutableRefObject, useEffect, useRef } from "react";
 
 export interface UseInfiniteScrollOptions {

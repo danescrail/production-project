@@ -6,12 +6,12 @@ import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicM
 import { articlesPageActions, articlesPageReducer, getArticles } from "../model/slices/articlesPageSlice";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useAppDispatch } from "app/providers/StoreProvider/config/hooks";
-import { fetchArticlesList } from "../model/services/fetchArticlesList/fetchArticlesList";
 import { useSelector } from "react-redux";
 import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView } from "../model/selectors/articlesPageSelectors";
-import { Page } from "shared/ui/Page/Page";
+import { Page } from "widgets/Page/ui/Page";
 import { fetchNextArticlesPage } from "../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { Text } from "shared/ui/Text/Text";
+import { initArticlesPage } from "../model/services/initArticlesPage/initArticlesPage";
 
 interface ArticlesPageProps {
     className?: string;
@@ -38,20 +38,17 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(articlesPageActions.initState());
-        dispatch(fetchArticlesList({
-            page: 1
-        }));
+        dispatch(initArticlesPage());
     });
 
     if (error) {
         <Page className={classNames(cls.ArticlePage, {}, [className!])}>
-            <Text text={'Ошибка загрузки статей'}/>
+            <Text text={'Ошибка загрузки статей'} />
         </Page>
     }
 
     return (
-        <DynamicModuleLoader reducers={reducers}>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page className={classNames(cls.ArticlePage, {}, [className!])} onScrollEnd={onLoadNextPart}>
                 <ArticleViewSelector view={view} onViewClick={onChangeView} />
                 <ArticleList

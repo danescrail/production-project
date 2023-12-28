@@ -7,6 +7,7 @@ import { ValidateProfileError } from "entities/Profile/model/types/profile";
 import { UserSchema } from "entities/User";
 import { AddCommentFormSchema } from "features/AddNewComment";
 import { LoginSchema } from "features/AuthByUsername";
+import { ScrollSaveSchema } from "features/ScrollSave";
 import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
 import { ArticlesPageSchema } from "pages/ArticlePage";
 import { NavigateOptions, To } from "react-router-dom";
@@ -14,6 +15,7 @@ import { NavigateOptions, To } from "react-router-dom";
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    saveScroll: ScrollSaveSchema;
     loginForm?: LoginSchema;
     profile: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
@@ -23,12 +25,15 @@ export interface StateSchema {
 }
 
 export type StateSchemaKey = keyof StateSchema;
+export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>
 
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;
     reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
     add: (key: StateSchemaKey, reducer: Reducer) => void;
     remove: (key: StateSchemaKey) => void;
+    // true - вмонтирован, false - демонтирован
+    getMountedReducers: () => MountedReducers;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore {

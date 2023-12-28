@@ -5,27 +5,26 @@ import { userReducer } from 'entities/User';
 import { createReducerManager } from './reducerManager';
 import { profileReducer } from 'entities/Profile/model/slice/profileSlice';
 import { $api } from 'shared/api/api';
-import { NavigateOptions, To } from 'react-router-dom';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import axios from 'axios';
+import { scrollSaveReducer } from 'features/ScrollSave';
 
 export function createReduxStore (
     initialState?: StateSchema,
-    asyncReducers?: ReducersMapObject<StateSchema>,
-    navigate?: (to: To, options?: NavigateOptions) => void
+    asyncReducers?: ReducersMapObject<StateSchema>
 ) {
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
-        profile: profileReducer
+        profile: profileReducer,
+        saveScroll: scrollSaveReducer
     }
 
     const reducerManager = createReducerManager(rootReducers);
 
     const extraArg: ThunkExtraArg = {
-        api: $api,
-        navigate
+        api: $api
     }
 
     const store = configureStore({
