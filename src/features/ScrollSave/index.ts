@@ -1,5 +1,5 @@
-import { ScrollSaveSchema } from "./model/types/ScrollSave";
-import { scrollSaveReducer, scrollSaveActions } from "./model/slices/ScrollSaveSlice";
+import { ScrollSaveSchema } from "./model/types/scrollSave";
+import { scrollSaveReducer, scrollSaveActions } from "./model/slices/scrollSaveSlice";
 import { getScrollSavePath } from "./model/selectors/scrollSave";
 
 export {

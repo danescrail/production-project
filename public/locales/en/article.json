@@ -3,5 +3,10 @@
   "Произошла ошибка при загрузке статьи": "An error occurred while uploading the article",
   "Копировать": "Copy",
   "Комментарии": "Comments",
-  "Назад к списку": "Return in list articles"
+  "Назад к списку": "Return in list articles",
+  "Сортировать ПО": "Sort BY",
+  "дате создания": "created at",
+  "названию": "name",
+  "просмотрам": "views",
+  "Рекомендуем": "Recommendations"
 }

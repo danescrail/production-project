@@ -5,6 +5,7 @@ import { ArticleView } from "./model/types/article";
 import { getArticleDetailsData } from "./model/selectors/articleDetails";
 import { ArticleList } from "./ui/ArticleList/ArticleList";
 import { ArticleViewSelector } from "./ui/ArticleViewSelector/ArticleViewSelector";
+import { ArticleTypeTabs } from "./ui/ArticleTypeTabs/ArticleTypeTabs";
 
 export {
     ArticleDetails,
@@ -13,5 +14,6 @@ export {
     ArticleView,
     getArticleDetailsData,
     ArticleList,
-    ArticleViewSelector
+    ArticleViewSelector,
+    ArticleTypeTabs
 }
