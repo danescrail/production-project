@@ -3,25 +3,24 @@ import cls from './ArticleDetailsPage.module.scss';
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 import { ArticleDetails, ArticleList } from "entities/Article";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Text, TextSize, TextTheme } from "shared/ui/Text/Text";
 import { CommentList } from "entities/Comment";
 import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { getArticleComments } from "../model/slices/articleDetailsCommentSlice";
+import { getArticleComments } from "../../model/slices/articleDetailsCommentSlice";
 import { useSelector } from "react-redux";
-import { getArticleCommentsIsLoading } from "../model/selectors/comments";
+import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { fetchCommentsArticleById } from "../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import { fetchCommentsArticleById } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { useAppDispatch } from "app/providers/StoreProvider/config/hooks";
 import { AddCommentForm } from "features/AddNewComment";
-import { addCommentForArticle } from "../model/services/addCommentForArticle/addCommentForArticle";
-import { Button, ThemeButton } from "shared/ui/Button/Button";
-import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
 import { Page } from "widgets/Page/ui/Page";
-import { getArticleRecommendations } from "../model/slices/articleDetailsRecommendationSlice";
-import { getArticleRecommendationsIsLoading } from "../model/selectors/recommendations";
-import { fetchArticlesRecommendations } from "../model/services/fetchArticlesRecommendations/fetchArticlesRecommendations";
-import { articleDetailsPageReducer } from "../model/slices";
+import { getArticleRecommendations } from "../../model/slices/articleDetailsRecommendationSlice";
+import { getArticleRecommendationsIsLoading } from "../../model/selectors/recommendations";
+import { fetchArticlesRecommendations } from "../../model/services/fetchArticlesRecommendations/fetchArticlesRecommendations";
+import { articleDetailsPageReducer } from "../../model/slices";
+import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -41,11 +40,6 @@ const ArticleDetailsPage = ({ className, isLoading }: ArticleDetailsPageProps) =
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
     const recommendations = useSelector(getArticleRecommendations.selectAll);
     const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
-    const navigate = useNavigate();
-
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
 
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
@@ -69,9 +63,7 @@ const ArticleDetailsPage = ({ className, isLoading }: ArticleDetailsPageProps) =
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className!])}>
-                <Button theme={ThemeButton.OUTLINE_INVERTED} onClick={onBackToList}>
-                    {t('Назад к списку')}
-                </Button>
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <Text size={TextSize.L} className={cls.commentTitle} title={t('Рекомендуем')} />
                 <ArticleList articles={recommendations} isLoading={recommendationsIsLoading} className={cls.recommendations} target={'_blank'}/>

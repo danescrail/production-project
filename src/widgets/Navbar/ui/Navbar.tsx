@@ -7,6 +7,9 @@ import { useTranslation } from "react-i18next";
 import { LoginModal } from "features/AuthByUsername";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserAuthData, userAction } from "entities/User";
+import { Text } from "shared/ui/Text/Text";
+import AppLink from "shared/ui/AppLink/AppLink";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
 
 interface NavbarProps {
     className?: string;
@@ -31,16 +34,21 @@ const Navbar = memo(({ className }: NavbarProps) => {
     }, [dispatch]);
 
     if (authData) {
-        return (<header className={classNames(cls.Navbar, {}, [className!])}>
-            <Button
-                theme={ThemeButton.OUTLINE_INVERTED}
-                className={cls.links}
-                onClick={onLogout}
-            >
-                {t('Выйти')}
-            </Button>
-            <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
-        </header>
+        return (
+            <header className={classNames(cls.Navbar, {}, [className!])}>
+                <Text className={cls.appName} title={t('DanesCrail App')}/>
+                <AppLink to={RoutePath.article_create} className={cls.createLink}>
+                    {t('Создать статью')}
+                </AppLink>
+                <Button
+                    theme={ThemeButton.OUTLINE_INVERTED}
+                    className={cls.links}
+                    onClick={onLogout}
+                >
+                    {t('Выйти')}
+                </Button>
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            </header>
         )
     }
 
